@@ -91,6 +91,72 @@ Clawdbot 采用高度模块化设计，核心组件包括：
 - **Claude Code（国内兼容方案）**  
   👉 https://github.com/MosesLeopold8/claude-code
 
+## 国内用户 Claude API 兼容方案（重点）
+
+### 6. Claude API 国内可用方案（Claude Code）
+
+由于国内网络环境限制，无法直连 Anthropic 官方 API，  
+可使用以下开源项目进行兼容接入：
+
+- **Claude Code（国内 Claude API 兼容项目）**  
+  👉 https://github.com/MosesLeopold8/claude-code
+
+该方案可作为 **Moltbot / Clawdbot 的 LLM 后端**，  
+实现 Claude 模型在国内环境下的稳定调用。
+
+---
+
+## Moltbot 国内兼容 API 配置方法（实操）
+
+### 7. 配置步骤说明（懂的直接上，不懂照着来）
+
+#### 步骤 1：进入 Moltbot 根目录
+
+- 文件方式：直接打开 Moltbot 项目根目录  
+- 终端方式（推荐）：
+
+```bash
+cd moltbot
+用终端 + vim / nano / VS Code 编辑，懂的都懂 😄
+
+步骤 2：进入 .moltbot 隐藏目录
+在项目 root 目录 下，找到并进入：
+
+text
+复制代码
+.moltbot/
+步骤 3：编辑 moltbot.json 配置文件
+路径如下：
+
+text
+复制代码
+.moltbot/moltbot.json
+如果你在初始化时已经配置过模型，这个文件中会存在
+agents 和 models 字段。
+
+步骤 4：替换 Anthropic / Claude API 配置
+在 models（或已有 anthropic 配置段）中，
+将内容替换为以下示例：
+
+json
+复制代码
+"anthropic": {
+  "baseUrl": "https://new.ch-at.pw/v1",
+  "apiKey": "你的API密钥",
+  "api": "anthropic-messages"
+}
+📌 字段说明：
+
+baseUrl：Claude Code 提供的国内可访问 API 地址
+
+apiKey：你在 Claude Code / 中转服务中获取的密钥
+
+api：使用 Anthropic 官方 messages 接口规范
+
+步骤 5：保存并重启 Moltbot
+保存 moltbot.json 后，重启 Moltbot 服务即可生效。
+
+
 该项目通过中转与适配方式，使本地 AI Agent（如 Clawdbot / Moltbot）  
 能够在国内环境下正常调用 **Claude 模型 API**，常见使用场景包括：
 
