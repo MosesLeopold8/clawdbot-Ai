@@ -1,14 +1,14 @@
-# Clawdbot（Moltbot）完整配置指南｜官网地址与核心功能详解
+# Clawdbot（现已更名为 Moltbot）完整配置指南｜官网地址与核心功能详解
 
 Clawdbot（**现已更名为 Moltbot**）是一个开源的 **本地 AI 智能体（Local AI Agent）** 项目，由 **Peter Steinberger** 发起。  
 该项目致力于将 AI 能力深度集成到本地设备中，在保证隐私与可控性的前提下，实现自动化任务执行与多渠道智能交互。
 
 ---
 
-## Clawdbot / Moltbot 官方地址
+## 官方地址与 GitHub
 
 - **最新版官网 & GitHub 地址**  
-  👉 https://github.com/moltbot/moltbot
+  👉 [https://github.com/moltbot/moltbot](https://github.com/moltbot/moltbot)
 
 ---
 
@@ -16,39 +16,37 @@ Clawdbot（**现已更名为 Moltbot**）是一个开源的 **本地 AI 智能�
 
 ### 1. 本地运行与隐私控制
 
-Clawdbot 完全运行在用户本地设备上（如 **Mac、Linux 服务器、树莓派** 等），  
-所有数据、模型配置和记忆均存储在本地，用户对数据拥有 **100% 控制权**，有效避免云端 AI 服务可能带来的隐私与合规风险。
+- Clawdbot 完全运行在本地设备上（如 **Mac、Linux 服务器、树莓派** 等），  
+  所有数据、模型配置和记忆均存储在本地，确保用户对数据拥有 **100% 控制权**，  
+  避免了云端 AI 服务可能带来的隐私与合规风险。
 
 ---
 
 ### 2. 多渠道聊天交互
 
-支持将常用通讯工具作为 AI 交互入口，包括但不限于：
+- 支持多种通讯工具作为 AI 交互入口，包括但不限于：
+  - WhatsApp
+  - Telegram
+  - iMessage
+  - Slack  
 
-- WhatsApp  
-- Telegram  
-- iMessage  
-- Slack  
-
-用户可直接在熟悉的聊天界面中与 AI 对话，无需额外打开新应用，极大降低使用门槛。
+- 用户可在熟悉的聊天界面中直接与 AI 对话，无需额外打开新应用，降低使用门槛。
 
 ---
 
 ### 3. 强大的任务执行能力
 
-Clawdbot 不只是“聊天机器人”，而是具备 **实际动手能力的 AI Agent**，支持：
+- Clawdbot 不仅是一个聊天机器人，更是具备 **实际操作能力的 AI Agent**，支持：
+  - 浏览器自动化操作
+  - 文件系统读写
+  - 终端命令执行
+  - 定时任务与工作流调度
 
-- 浏览器自动化操作  
-- 文件系统读写  
-- 终端命令执行  
-- 定时任务与工作流调度  
-
-可用于自动完成：
-
-- 邮件处理  
-- 代码调试  
-- 网页信息调研  
-- 日程与任务管理  
+- 可以用来自动完成任务如：
+  - 邮件处理
+  - 代码调试
+  - 网页信息收集
+  - 日程与任务管理  
 
 真正实现 **“让 AI 帮你干活”**。
 
@@ -56,143 +54,121 @@ Clawdbot 不只是“聊天机器人”，而是具备 **实际动手能力的 A
 
 ### 4. 持久化记忆与主动服务
 
-内置记忆系统（Memory），可长期保存：
+- 内置的 **记忆系统**（Memory）可以长期保存：
+  - 用户偏好
+  - 对话历史
+  - 任务上下文  
 
-- 用户偏好  
-- 对话历史  
-- 任务上下文  
-
-并支持 **主动式服务**，例如：
-
-- 定期提醒  
-- 每日 / 每周工作简报  
-- 系统状态监控  
-- 自动化周期任务执行  
+- 支持 **主动式服务**，如：
+  - 定期提醒
+  - 每日/每周工作简报
+  - 系统状态监控
+  - 自动化周期任务执行
 
 ---
 
 ### 5. 模块化架构设计
 
-Clawdbot 采用高度模块化设计，核心组件包括：
+- Clawdbot 采用高度模块化设计，核心组件包括：
+  - **Gateway（网关）**
+  - **Agent（智能体）**
+  - **Skills（技能模块）**
+  - **Memory（记忆系统）**
 
-- **Gateway（网关）**  
-- **Agent（智能体）**  
-- **Skills（技能模块）**  
-- **Memory（记忆系统）**
-
-用户可按需扩展技能，例如集成第三方 API、内部系统或专用工具。
+- 用户可以根据需求扩展技能模块，集成第三方 API、内部系统或专用工具。
 
 ---
 
 ### 6. 国内用户 API 兼容与 Claude 接入方案（重要）
 
-针对 **国内用户无法直接访问官方 Claude / Anthropic API** 的问题，可通过以下开源项目实现兼容接入：
+由于 **国内用户无法直接访问官方 Claude / Anthropic API**，  
+可以通过以下开源项目实现兼容接入：
 
 - **Claude Code（国内兼容方案）**  
-  👉 https://github.com/MosesLeopold8/claude-code
-
-## 国内用户 Claude API 兼容方案（重点）
-
-### 6. Claude API 国内可用方案（Claude Code）
-
-由于国内网络环境限制，无法直连 Anthropic 官方 API，  
-可使用以下开源项目进行兼容接入：
-
-- **Claude Code（国内 Claude API 兼容项目）**  
-  👉 https://github.com/MosesLeopold8/claude-code
-
-该方案可作为 **Moltbot / Clawdbot 的 LLM 后端**，  
-实现 Claude 模型在国内环境下的稳定调用。
+  👉 [https://github.com/MosesLeopold8/claude-code](https://github.com/MosesLeopold8/claude-code)
 
 ---
 
 ## Moltbot 国内兼容 API 配置方法（实操）
 
-### 7. 配置步骤说明（懂的直接上，不懂照着来）
+### 7. 配置步骤说明
 
-#### 步骤 1：进入 Moltbot 根目录
+> **注：** 若你对步骤熟悉可直接跳过，不懂的请照着下面的步骤操作。本人已亲测，流程正常。
 
-- 文件方式：直接打开 Moltbot 项目根目录  
-- 终端方式（推荐）：
+1. **安装步骤**
 
-```bash
-cd moltbot
-用终端 + vim / nano / VS Code 编辑，懂的都懂 😄
+    运行以下一键安装命令，脚本将自动处理大部分配置：
+    
+    ```bash
+    curl -fsSL https://molt.bot/install.sh | bash
+    ```
 
-步骤 2：进入 .moltbot 隐藏目录
-在项目 root 目录 下，找到并进入：
+    等待安装完成并保持网络畅通。
 
-text
-复制代码
-.moltbot/
-步骤 3：编辑 moltbot.json 配置文件
-路径如下：
+2. **选择模型**
 
-text
-复制代码
-.moltbot/moltbot.json
-如果你在初始化时已经配置过模型，这个文件中会存在
-agents 和 models 字段。
+    安装完成后，向导会询问选择的模型提供商：
+    - **LLM 提供商**：选择 **Anthropic（Claude）**
+    - 输入 **Claude Code** 中转站获取的密钥  
+    - 其他配置保持默认。
 
-步骤 4：替换 Anthropic / Claude API 配置
-在 models（或已有 anthropic 配置段）中，
-将内容替换为以下示例：
+3. **配置 Telegram 作为消息渠道**
 
-json
-复制代码
-"anthropic": {
-  "baseUrl": "https://new.ch-at.pw/v1",
-  "apiKey": "你的API密钥",
-  "api": "anthropic-messages"
-}
-📌 字段说明：
+    - **创建 Telegram 机器人**  
+      打开 Telegram，搜索 **@BotFather**，发送 `/newbot` 按提示创建一个新机器人，获取 Bot Token。
+    - **绑定到 Moltbot**  
+      在服务器终端运行以下命令，输入刚刚获取的 Bot Token：
+      
+      ```bash
+      clawdbot channels add telegram
+      ```
 
-baseUrl：Claude Code 提供的国内可访问 API 地址
+    - **配对与启动 Gateway**  
+      启动 Gateway 后，在 Telegram 机器人发送一条消息，记录下配对码：
+      
+      ```bash
+      clawdbot gateway
+      ```
+      
+      接着运行配对命令，完成配对：
+      
+      ```bash
+      clawdbot pairing approve telegram <配对码>
+      ```
 
-apiKey：你在 Claude Code / 中转服务中获取的密钥
+4. **修改配置文件**
 
-api：使用 Anthropic 官方 messages 接口规范
+    配置完成后，编辑配置文件并重启 Moltbot：
 
-步骤 5：保存并重启 Moltbot
-保存 moltbot.json 后，重启 Moltbot 服务即可生效。
+    ```bash
+    nano ~/.clawdbot/clawdbot.json
+    ```
 
+    在 `models` 部分新增以下内容，并替换你的 API 密钥：
 
-该项目通过中转与适配方式，使本地 AI Agent（如 Clawdbot / Moltbot）  
-能够在国内环境下正常调用 **Claude 模型 API**，常见使用场景包括：
+    ```json
+    "models": {
+      "providers": {
+        "anthropic": {
+          "baseUrl": "https://new.ch-at.pw",
+          "apiKey": "你的API密钥",
+          "api": "anthropic-messages",
+          "models": []
+        }
+      }
+    }
+    ```
 
-- 作为 Moltbot 的 LLM 后端  
-- 替代官方 Claude API 直连  
-- 与本地代理、环境变量配置结合使用  
+    修改完成后，重启 Moltbot：
 
-⚠️ **使用建议**：
+    ```bash
+    clawdbot gateway restart
+    ```
 
-- 注意 API Key 与代理地址的安全管理  
-- 避免在公网暴露未鉴权接口  
-- 优先在本地或内网环境中部署测试  
-
----
-
-### 7. 开源可定制，社区生态活跃
-
-- 项目 **完全开源**，支持自由修改与二次开发  
-- 社区提供大量教程、插件与实践案例  
-- 适合开发者、极客及企业进行深度定制  
-
-⚠️ **安全提示**：  
-由于 Clawdbot 拥有较高系统权限，建议：
-
-- 在独立设备或沙盒环境中运行  
-- 合理配置权限与安全策略  
-- 避免直接在生产主机上开放高危能力  
-
----
-
-## 适合人群
-
-- 本地 AI Agent / AutoGPT 类工具爱好者  
-- 自动化与效率工具开发者  
-- 注重数据隐私的个人与团队  
-- 希望在国内稳定使用 Claude / 大模型的高级用户  
+    现在，你就可以通过 Telegram 与 Moltbot 对话了。
 
 ---
 
+## 总结
+
+通过本指南，你可以在本地部署并配置 Moltbot，享受隐私控制、强大任务执行能力及多渠道交互的智能体验。对于国内用户，已提供兼容方案以确保能够顺利使用 Claude 模型。快来体验这一切，让 AI 成为你日常工作的得力助手！
